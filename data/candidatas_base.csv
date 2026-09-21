@@ -1,0 +1,2 @@
+sq_candidato,nome_urna,numero,cargo,partido,situacao_candidatura,foto_url,regiao_atuacao,resumo_trajetoria,trajetoria_declarada,atuacao_documentada,pautas,fonte_principal,fonte_2,fonte_3,ultima_revisao_editorial
+EXEMPLO001,Candidata Exemplo,0000,Deputado Federal,PARTIDO,EXEMPLO,,São Paulo,Texto demonstrativo para testar o layout.,,,Direitos das mulheres|Educação,,,,2026-09-19
