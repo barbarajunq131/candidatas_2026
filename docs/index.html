@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Informações públicas sobre candidatas a deputada estadual e federal em São Paulo nas eleições de 2026.">
+  <meta name="theme-color" content="#17213a">
+  <title>Mulheres e Representação Política 2026</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#resultados">Ir para os resultados</a>
+
+  <header class="topo">
+    <div class="topo__marca">
+      <span class="topo__selo" aria-hidden="true">SP</span>
+      <div>
+        <p class="topo__rotulo">Eleições 2026</p>
+        <h1>Mulheres e Representação Política 2026</h1>
+      </div>
+    </div>
+    <button class="botao botao--secundario" id="compartilhar" type="button">Compartilhar</button>
+  </header>
+
+  <main>
+    <section class="abertura" aria-labelledby="titulo-abertura">
+      <div>
+        <p class="abertura__chamada">Mulheres na política e representação racial</p>
+        <h2 id="titulo-abertura">Conheça trajetórias, pautas e canais públicos das candidatas</h2>
+        <p>Consulte candidaturas femininas a deputada estadual e federal em São Paulo dentro do recorte partidário descrito na metodologia.</p>
+      </div>
+      <div class="abertura__numero" aria-label="Base completa">
+        <strong>193</strong>
+        <span>candidatas na base</span>
+      </div>
+    </section>
+
+    <nav class="navegacao" aria-label="Seções do site">
+      <button class="navegacao__item ativo" data-pagina="negras" type="button">Candidatas negras</button>
+      <button class="navegacao__item" data-pagina="todas" type="button">Todas as candidatas</button>
+      <button class="navegacao__item" data-pagina="metodologia" type="button">Metodologia</button>
+    </nav>
+
+    <section id="explorador">
+      <div class="resumo" aria-live="polite">
+        <div class="resumo__cabecalho">
+          <div>
+            <p class="rotulo">Resultado atual</p>
+            <h2 id="titulo-pagina">Candidatas negras</h2>
+          </div>
+          <p id="total-encontrado" class="total-encontrado"></p>
+        </div>
+        <div id="contadores" class="contadores"></div>
+      </div>
+
+      <div class="conteudo">
+        <aside class="painel-filtros" aria-label="Filtros">
+          <div class="painel-filtros__titulo">
+            <h2>Filtros</h2>
+            <button id="limpar-filtros" class="link-botao" type="button">Limpar</button>
+          </div>
+
+          <label for="filtro-cargo">Cargo</label>
+          <select id="filtro-cargo"><option value="">Todos os cargos</option></select>
+
+          <label for="filtro-partido">Partido</label>
+          <select id="filtro-partido"><option value="">Todos os partidos</option></select>
+
+          <label for="filtro-pauta">Pauta documentada</label>
+          <select id="filtro-pauta"><option value="">Todas as pautas</option></select>
+
+          <div id="grupo-raca">
+            <label for="filtro-raca">Raça/cor autodeclarada ao TSE</label>
+            <select id="filtro-raca"><option value="">Todas as autodeclarações</option></select>
+          </div>
+
+          <label for="filtro-busca">Buscar candidata</label>
+          <input id="filtro-busca" type="search" placeholder="Digite o nome" autocomplete="off">
+        </aside>
+
+        <section id="resultados" class="resultados" aria-label="Lista de candidatas">
+          <div id="lista-candidatas" class="lista-candidatas"></div>
+          <div id="sem-resultados" class="sem-resultados" hidden>
+            <h2>Nenhuma candidata encontrada</h2>
+            <p>Retire um dos filtros ou faça uma nova busca.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="metodologia" class="metodologia" hidden>
+      <p class="rotulo">Sobre a plataforma</p>
+      <h2>Metodologia</h2>
+
+      <h3>Escopo</h3>
+      <p>A plataforma reúne candidaturas femininas a deputada estadual e deputada federal no estado de São Paulo.</p>
+
+      <h3>Recorte partidário</h3>
+      <p>Foram incluídos partidos classificados nos campos da esquerda e da centro-esquerda. A delimitação utiliza os escores ideológicos de Bolognesi, Ribeiro, Codato e Silva (2026), elaborados a partir de pesquisas realizadas com especialistas em Ciência Política nos anos de 2018 e 2022.</p>
+      <p>Para aplicação dos escores, foram harmonizadas as siglas partidárias, considerando mudanças de nome, incorporações e reorganizações. Para as eleições de 2026, foram adotados os escores de 2022, correspondentes à rodada mais recente da pesquisa. O recorte considera como esquerda os partidos com escores entre 0 e 3 e como centro-esquerda aqueles com escores entre 3,01 e 4,49.</p>
+      <p><strong>Partidos incluídos:</strong> PSTU, PCO, PCB, PSOL, UP, PCdoB, PT, PSB, Rede, PDT e PV.</p>
+
+      <h3>Raça/cor</h3>
+      <p>A classificação exibida é a raça/cor autodeclarada ao TSE. Na seção “Candidatas negras”, são consideradas as categorias preta e parda.</p>
+
+      <h3>Trajetórias e pautas</h3>
+      <p>Os textos editoriais são registrados apenas quando há fonte pública identificada. O número de mandatos é informado quando disponível e documentado.</p>
+
+      <h3>Dados eleitorais e fotos</h3>
+      <p>Nome de urna, número, partido, cargo, raça/cor, redes sociais, histórico eleitoral e foto são obtidos das bases públicas do TSE quando disponíveis. Cada fotografia é associada ao perfil pelo identificador único <code>SQ_CANDIDATO</code> e passa por auditoria de integridade antes de ser exibida.</p>
+
+      <h3>Atualização e transparência</h3>
+      <p>A base oficial e a curadoria editorial são mantidas separadamente para que atualizações eleitorais não apaguem a pesquisa realizada. A plataforma não atribui notas, rankings nem recomendações de voto.</p>
+
+      <h3>Referência</h3>
+      <p>BOLOGNESI, Bruno; RIBEIRO, Ednaldo; CODATO, Adriano; SILVA, Bruno Fernando da. <em>O desaparecimento do centro ideológico no sistema partidário brasileiro: a classificação mais atualizada dos experts</em>. Opinião Pública, v. 31, e31120, 2026. <a href="https://periodicos.sbu.unicamp.br/ojs/index.php/op/article/view/8682072" target="_blank" rel="noopener noreferrer">Consultar publicação</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dados eleitorais públicos do TSE. Curadoria editorial independente.</p>
+  </footer>
+
+  <template id="modelo-card">
+    <article class="card-candidata">
+      <div class="card-candidata__foto-wrap">
+        <img class="card-candidata__foto" alt="" loading="lazy" width="161" height="225">
+      </div>
+      <div class="card-candidata__conteudo">
+        <div class="card-candidata__topo">
+          <div>
+            <h3 class="card-candidata__nome"></h3>
+            <p class="card-candidata__identificacao"></p>
+          </div>
+          <span class="card-candidata__raca"></span>
+        </div>
+        <p class="card-candidata__resumo"></p>
+        <div class="card-candidata__pautas"></div>
+        <div class="card-candidata__redes"></div>
+        <details class="card-candidata__detalhes">
+          <summary>Trajetória, histórico eleitoral e fontes</summary>
+          <div class="detalhes__conteudo"></div>
+        </details>
+      </div>
+    </article>
+  </template>
+
+  <div id="aviso" class="aviso" role="status" aria-live="polite" hidden></div>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>
